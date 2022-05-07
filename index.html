@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a34355a696.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <section class="container">
+          <!-- todo list section -->
+          <article class="task">
+            <div class="time-flex">
+              <div class="hour">
+                <h1><time datetime="09">09</time></h1>
+              </div>
+              <div class="minutes">
+                <h1><time datetime="09">09</time></h1>
+              </div>
+              <div class="date">
+                <h3><time datetime="24 December">24 December</time></h3>
+                <!-- #a3a9f4 -->
+              </div>
+            </div>
+              
+              <br><br>
+              <button class="plan-btn"><i class="fa-solid fa-clipboard-list"></i>     Plan For Today</button>
+              <!-- tasks -->
+              <form action="index.html" method="post" class="form">
+                  <input type="checkbox" id="ch1" name="ch1">
+                  <input type="text" aria-placeholder="Enter Task">
+              </form>
+              <form action="index.html" method="post" class="form">
+                <input type="checkbox" id="ch2" name="ch2">
+                <input type="text" aria-placeholder="Enter Task">
+              </form>
+              <form action="index.html" method="post" class="form">
+                <input type="checkbox" id="ch3" name="ch3">
+                <input type="text" aria-placeholder="Enter Task">
+              </form>
+              <!-- end of tasks -->
+          <!-- end of to do list section -->
+
+          <!-- timer section -->
+          <article class="timer"></article>
+          <!-- end of timer section -->
+          </article>
+      </section>
+  </body>
