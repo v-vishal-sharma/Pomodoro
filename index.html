@@ -1,18 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starter</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-      <h1>lks;df</h1>
-  </body>
+   <!-- css -->
+   <link rel="stylesheet" href="styles.css">
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/a34355a696.js" crossorigin="anonymous"></script>
+
+ </head>
+ <body>
+   <main>
+
+    <!-- to do section -->
+
+    <article class="container">
+
+      <!-- time boxes -->
+
+      <div class="dTime-flex">
+        <div class="hour">
+          <h1><time datetime="09">09</time></h1>
+        </div>
+        <div class="minute">
+          <h1><time datetime="09">09</time></h1>
+        </div>
+        <div class="date">
+          <h3 class="dtime"><time datetime="24 December">24 December</time></h3>
+        </div>
+      </div>
+
+      <br><br>
+
+      <!-- to do list -->
+
+      <div class="list" id="header">
+        <input type="text" id="Input" placeholder="Enter Task">
+      </div>
+      <button class="plan-btn"><i class="fa-solid fa-clipboard-list"></i>     Plan For Today</button>
+
+      <div class="tasks">
+        <table class="listings">
+          <tr>
+            <td>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+    </article>
+   </main>
+   
+ </body>
+ </html>
