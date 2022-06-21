@@ -245,7 +245,9 @@ To Do List
   border-radius: 10px;
   overflow: scroll;
 }
-
+*{
+  box-sizing: border-box;
+}
 /* tags */
 input {
   /* float: left;
@@ -261,6 +263,61 @@ input {
   float: left;
   font-size: 14px;
 }
+ul{
+  margin: 0;
+  padding: 0;
+}
+ul,li{
+  cursor: pointer;
+  font-size: 18px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+  transition: 0.2s;
+  border-radius: 5px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+li {
+  background:#555;
+}
+li:nth-child(odd){
+  background: white;
+}
+li:hover{
+  background: black;
+  color: white;
+}
+li.checked{
+  text-decoration: line-through;
+  color: darkgrey;
+  background: grey;
+}
+/* to add a check mark */
+li.checked::before {
+  content: '';
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  height: 15px;
+  width: 7px;
+  left: 1rem;
+}
+.close-btn{
+  position: absolute;
+  padding: 0.01rem 0.7rem;
+  right: 1.6rem;
+  border-radius: 5px;
+}
+.close-btn:hover{
+  background-color: red;
+  color: white;
+}
+
 /*
 =============== 
 Pomodoro
