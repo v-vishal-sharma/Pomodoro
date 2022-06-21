@@ -263,8 +263,8 @@ input {
   float: left;
   font-size: 14px;
 }
-ul{
-  margin: 0;
+.myList{
+  margin-left: 0 !important;
   padding: 0;
 }
 ul,li{
@@ -275,6 +275,7 @@ ul,li{
   text-align: left;
   transition: 0.2s;
   border-radius: 5px;
+  margin-left: 2rem;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -293,8 +294,8 @@ li:hover{
 }
 li.checked{
   text-decoration: line-through;
-  color: darkgrey;
-  background: grey;
+  color: #A0A0A0;
+  background: #DCDCDC;
 }
 /* to add a check mark */
 li.checked::before {
@@ -305,12 +306,13 @@ li.checked::before {
   position: absolute;
   height: 15px;
   width: 7px;
-  left: 1rem;
+  left: 1.5rem;
+  transform: rotate(45deg);
 }
 .close-btn{
   position: absolute;
   padding: 0.01rem 0.7rem;
-  right: 1.6rem;
+  right: 0.6rem;
   border-radius: 5px;
 }
 .close-btn:hover{
