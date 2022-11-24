@@ -26,6 +26,17 @@
 //   }
 // }, 1000);
 
+// Date and Time
+const date = new Date();
+
+var x = setInterval(function(){
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  document.getElementById("hour").innerHTML = hour;
+  document.getElementById("minute").innerHTML = minute;
+},1000);
+
+
 // create a close button and add it at the end of each li item
 var myToDoList = document.getElementsByTagName("li");
 var i;
