@@ -5,7 +5,7 @@ const date = new Date();
 
 var x = setInterval(function(){
   let hour = date.getHours();
-  let hours = hour>=12 ? hour%12 : hour;
+  let hours = hour>12 ? hour%12 : hour;
   let ampm = hour>=12 ? "pm" : "am";
   let minute = date.getMinutes();
   
