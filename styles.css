@@ -133,7 +133,7 @@ To Do
   }
   li.checked{
     text-decoration: line-through;
-    color: #A-1A0A0;
+    color: #A1A0A0;
     background: #DCDCDC;
   }
   /* to add a check mark */
@@ -189,6 +189,9 @@ To Do
     display: inline-block;
     font-size: 2rem;
   }
+  .tab-btn.active {
+    background-color: blue;
+  }
   .btn-container, .content{
     background-color: white;
   }
@@ -212,6 +215,7 @@ To Do
   .timer:not(.active){
     display: none;
   }
+  /* instead of padding, use height and width */
   .startPauseBtn{
     margin-top: 3rem;
     margin-left: 30rem;

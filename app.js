@@ -88,3 +88,21 @@ enterForm.addEventListener("keydown" , function(e) {
   };
 
 });
+
+//Tab button active and inactive
+const tabBtn = document.querySelectorAll(".tab-btn");
+
+tabBtn.addEventListener("click", function(){
+  
+});
+
+//changing html of start/pause button
+let startPauseBtn = document.querySelector(".startPauseBtn");
+
+startPauseBtn.addEventListener("click", function(){
+  if(startPauseBtn.innerHTML === "Start"){
+    startPauseBtn.innerHTML = "Pause";
+  }else{
+    startPauseBtn.innerHTML = "Start";
+  }
+});
