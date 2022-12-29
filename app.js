@@ -89,10 +89,23 @@ enterForm.addEventListener("keydown" , function(e) {
 
 });
 
-//Tab button active and inactive
+// Tab button active and inactive
 const tabBtn = document.querySelectorAll(".tab-btn");
+const parent = document.querySelector(".parentContent");
 
-tabBtn.addEventListener("click", function(){
+parent.addEventListener("click", function(e){
+  const id = e.target.dataset.id;
+
+  if(id){
+    tabBtn.forEach(function(btn){
+      //remove active from all buttons
+      btn.classList.remove(".active");
+      console.log("removed");
+      //add active to clicked button
+      e.target.classList.add(".active");
+      console.log("added");
+    });
+  };
   
 });
 

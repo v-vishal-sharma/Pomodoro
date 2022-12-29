@@ -201,6 +201,10 @@ To Do
     margin-left: 1rem;
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;
+    display:block;
+  }
+  .content:not(.active){
+    display: none;
   }
   .timer{
     height: inherit;
