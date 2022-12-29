@@ -3,9 +3,7 @@
 To Do 
 ===========
 */
-body {
-  background-color: gray;
-}
+
 .container {
     width: 38vw;
     /* max-width: var(--fixed-width); */
@@ -13,10 +11,10 @@ body {
     height: 90vh;
     /* transform: translateX(-71%); */
     border-radius: 2%;
-    padding: 0.5 rem 2rem;
+    padding: 0.5rem 2rem;
     text-align: center !important;
     justify-content: center;
-    display: inline-block;
+    /* display: inline-block; */
   }
   .dTime-flex{
     display: flex;
@@ -69,12 +67,12 @@ body {
     transition: .04s
   }
   .tasks{
-    height: 59%;
+    height: 53vh;
     width: 35vw;
     margin: auto;
     background-color: grey;
     border-radius: 2%;
-    /* overflow: scroll; */
+    /* overflow: auto; */
   }
   .myList{
     margin-left: -1 !important;
@@ -83,7 +81,17 @@ body {
   *{
     box-sizing: border-box;
   }
-  /* tags */
+
+  /* ======TAGS====== */
+
+  body {
+    background-color: gray;
+  }
+  main {
+    margin-top: 2.7rem;
+    display: flex;
+    gap: 1rem;
+  }
   input {
     /* float: left;
     margin-top: -1.5rem; */
@@ -137,13 +145,13 @@ body {
     position: absolute;
     height: 14px;
     width: 6px;
-    left: 0.5rem;
+    left: 3rem;
     transform: rotate(44deg);
   }
   .close-btn{
     position: absolute;
-    padding: -1.01rem 0.7rem;
-    right: -1.6rem;
+    padding: .03rem 0.3rem;
+    left: 43rem;
     border-radius: 4px;
   }
   .close-btn:hover{
@@ -157,9 +165,58 @@ body {
   =================
   */
   
-  .timerContainer{
-    height: 79vh;
-    width: 49vw;
-    background-color: white;
-    display: inline-block;
+  .parentTimerContainer{
+    height: 90vh;
+    width: 60vw;
+    border-top-left-radius:     12px;
+    border-top-right-radius:    12px;
+    border-bottom-left-radius:  12px;
+    border-bottom-right-radius: 12px;
+    /* border-radius: 3%; */
+    background-color: black;
+    /* display: inline-block; */
   }
+  .btn-container {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-column-gap: 1rem; */
+  }
+  .tab-btn {
+    display: inline-block;
+    font-size: 2rem;
+  }
+  .btn-container, .content{
+    background-color: white;
+  }
+  .content {
+    height: 79vh;
+    width: 58.37vw;
+    margin-left: 1rem;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  }
+  .timer{
+    height: inherit;
+    width: auto;
+    height: 20vh;
+    padding-top: 0.7rem;
+    text-align: center;
+    font-size: 8rem;
+    display: block;
+    
+  }
+  .timer:not(.active){
+    display: none;
+  }
+  .startPauseBtn{
+    margin-top: 3rem;
+    margin-left: 30rem;
+    padding: 1rem 4rem;
+    font-size: 2rem;
+  }
+  /* ======TAGS====== */
+
