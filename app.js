@@ -91,9 +91,17 @@ enterForm.addEventListener("keydown" , function(e) {
 
 //Tab button active and inactive
 const tabBtn = document.querySelectorAll(".tab-btn");
+const btnContainer = document.querySelector(".btn-container");
 
-tabBtn.addEventListener("click", function(){
-  
+btnContainer.addEventListener("click", function(e){
+  const id = e.target.dataset.id;
+
+  if(id){
+    tabBtn.forEach(function(btn){
+      btn.classList.remove("active");
+      e.target.classList.add("active");
+    });
+  }
 });
 
 //changing html of start/pause button
