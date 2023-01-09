@@ -114,3 +114,39 @@ startPauseBtn.addEventListener("click", function(){
     startPauseBtn.innerHTML = "Start";
   }
 });
+
+//starting timer
+
+const elem = document.querySelector(".timer.tf");
+
+startPauseBtn.addEventListener("click", function(){
+
+  var mins = 25;
+
+  var seconds = mins *60;
+
+  function startTimer () {
+      seconds --;
+      if(seconds === 0){
+        clearInterval(interval)
+      }
+      sec = seconds % 60;
+      if (sec > 9){
+          secs = seconds % 60;
+      }else{
+          secs = `0${seconds % 60}`
+      }
+      var min = Math.floor(seconds / 60);
+      elem.innerHTML = `${min}:${secs}`;
+  }
+
+  var interval;
+
+  if (startPauseBtn.innerHTML === "Start"){
+    interval = setInterval(startTimer ,1000);
+  } 
+  else{
+    clearInterval(interval)
+  }
+});
+
