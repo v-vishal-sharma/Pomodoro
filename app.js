@@ -118,14 +118,15 @@ startPauseBtn.addEventListener("click", function(){
 //starting timer
 
 const elem = document.querySelector(".timer.tf");
+startPauseBtn = document.querySelector(".startPauseBtn");
+var interval;
 
 startPauseBtn.addEventListener("click", function(){
-
-  var mins = 25;
-
-  var seconds = mins *60;
-
-  function startTimer () {
+    
+    var mins = 10;
+    var seconds = mins *60;
+  
+    function startTimer () {
       seconds --;
       if(seconds === 0){
         clearInterval(interval)
@@ -137,16 +138,24 @@ startPauseBtn.addEventListener("click", function(){
           secs = `0${seconds % 60}`
       }
       var min = Math.floor(seconds / 60);
-      elem.innerHTML = `${min}:${secs}`;
-  }
+      if (min > 9){
+        var minss = Math.floor(seconds / 60);
+      }
+      else{
+        var minss = `0${Math.floor(seconds / 60)}`
+      }
+      elem.innerHTML = `${minss}:${secs}`;
+    }
 
-  var interval;
-
-  if (startPauseBtn.innerHTML === "Start"){
-    interval = setInterval(startTimer ,1000);
-  } 
-  else{
-    clearInterval(interval)
-  }
+    if (startPauseBtn.innerHTML === "Start"){
+      console.log("OK");
+      interval = setInterval(startTimer ,1000);
+      startPauseBtn.innerHTML = "Cancel";
+    } 
+    else {
+      clearInterval(interval);
+      startPauseBtn.innerHTML = "Start";
+      elem.innerHTML = `${mins}:00`;
+    }
 });
 
