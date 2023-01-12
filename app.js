@@ -92,44 +92,53 @@ enterForm.addEventListener("keydown" , function(e) {
 //Tab button active and inactive
 const tabBtn = document.querySelectorAll(".tab-btn");
 const btnContainer = document.querySelector(".btn-container");
+const timers = document.querySelectorAll(".timer");
 
 btnContainer.addEventListener("click", function(e){
   const id = e.target.dataset.id;
+  
 
   if(id){
     tabBtn.forEach(function(btn){
       btn.classList.remove("active");
       e.target.classList.add("active");
     });
+    timers.forEach(function(t){
+      t.classList.remove("active");
+    })
+    const element = document.getElementById(id);
+    element.classList.add("active");
   }
 });
 
 //changing html of start/pause button
-let startPauseBtn = document.querySelector(".startPauseBtn");
+// let startPauseBtn = document.querySelector(".startPauseBtn");
 
-startPauseBtn.addEventListener("click", function(){
-  if(startPauseBtn.innerHTML === "Start"){
-    startPauseBtn.innerHTML = "Pause";
-  }else{
-    startPauseBtn.innerHTML = "Start";
-  }
-});
+// startPauseBtn.addEventListener("click", function(){
+//   if(startPauseBtn.innerHTML === "Start"){
+//     startPauseBtn.innerHTML = "Pause";
+//   }else{
+//     startPauseBtn.innerHTML = "Start";
+//   }
+// });
 
 //starting timer
 
-const elem = document.querySelector(".timer.tf");
-startPauseBtn = document.querySelector(".startPauseBtn");
+const elem = document.querySelector(".timer.active");
+let startPauseBtn = document.querySelector(".startPauseBtn");
 var interval;
 
 startPauseBtn.addEventListener("click", function(){
     
-    var mins = 10;
+    var mins = elem.innerHTML;
     var seconds = mins *60;
   
     function startTimer () {
       seconds --;
       if(seconds === 0){
-        clearInterval(interval)
+        clearInterval(interval);
+        startPauseBtn.innerHTML = "Start";
+        elem.innerHTML = `${mins}:00`;
       }
       sec = seconds % 60;
       if (sec > 9){

@@ -42,6 +42,7 @@ To Do
     height: 4vh;
     width: 20vw;
     margin: auto;
+    padding-left: 1rem;
   }
   .plan-btn {
     font-size: 1rem;
@@ -77,6 +78,7 @@ To Do
   .myList{
     margin-left: -1 !important;
     padding: -1;
+    list-style: none;
   }
   *{
     box-sizing: border-box;
@@ -138,15 +140,13 @@ To Do
   }
   /* to add a check mark */
   li.checked::before {
-    content: '';
-    border-color: #fff;
-    border-style: solid;
-    border-width: -1 2px 2px 0;
+    content: '\2713';
+    color:black;    
     position: absolute;
     height: 14px;
     width: 6px;
     left: 3rem;
-    transform: rotate(44deg);
+    transform: rotate(4deg);
   }
   .close-btn{
     position: absolute;
@@ -215,11 +215,11 @@ To Do
   .timer:not(.active){
     display: none;
   }
-  /* instead of padding, use height and width */
   .startPauseBtn{
     margin-top: 3rem;
     margin-left: 30rem;
-    padding: 1rem 4rem;
+    height: 4rem;
+    width:12rem;
     font-size: 2rem;
   }
   /* ======TAGS====== */
