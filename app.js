@@ -124,13 +124,26 @@ btnContainer.addEventListener("click", function(e){
 
 //starting timer
 
-const elem = document.querySelector(".timer.active");
+//to select the active element
+let elem;
+window.addEventListener("click", function(){
+  elem = document.querySelector(".timer.active");
+});
 let startPauseBtn = document.querySelector(".startPauseBtn");
-var interval;
+let interval;
+let ogmins;
 
 startPauseBtn.addEventListener("click", function(){
     
-    var mins = elem.innerHTML;
+    let mins = elem.innerHTML.slice(0,2);
+
+    if (elem.id === "twentyFiveMinutes"){
+      ogmins = 25;
+    }
+    else {
+      ogmins = 05;
+    }
+
     var seconds = mins *60;
   
     function startTimer () {
@@ -157,14 +170,18 @@ startPauseBtn.addEventListener("click", function(){
     }
 
     if (startPauseBtn.innerHTML === "Start"){
-      console.log("OK");
       interval = setInterval(startTimer ,1000);
       startPauseBtn.innerHTML = "Cancel";
     } 
     else {
       clearInterval(interval);
       startPauseBtn.innerHTML = "Start";
-      elem.innerHTML = `${mins}:00`;
+      if(ogmins === 5){
+        elem.innerHTML = `0${ogmins}:00`;
+      }
+      else {
+        elem.innerHTML = `${ogmins}:00`;
+      }
     }
 });
 
