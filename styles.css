@@ -190,7 +190,7 @@ To Do
     font-size: 2rem;
   }
   .tab-btn.active {
-    background-color: blue;
+    background-color: rgba(248, 246, 246, 0.849)
   }
   .btn-container, .content{
     background-color: white;
@@ -221,6 +221,11 @@ To Do
     height: 4rem;
     width:12rem;
     font-size: 2rem;
+    display: block;
+  }
+  .video-container {
+    height: 25rem;
+    width : 100%;
   }
   /* ======TAGS====== */
 

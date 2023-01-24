@@ -1,9 +1,9 @@
 // Date and Time
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-const date = new Date();
 
 var x = setInterval(function(){
+  const date = new Date();
   let hour = date.getHours();
   let hours = hour>12 ? hour%12 : hour;
   let ampm = hour>=12 ? "pm" : "am";
@@ -184,4 +184,8 @@ startPauseBtn.addEventListener("click", function(){
       }
     }
 });
+
+//adding to local storage
+
+
 
