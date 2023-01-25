@@ -58,9 +58,12 @@ function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("Input").value;
   var t = document.createTextNode(inputValue);
+
+  let id = new Date().getTime();
+  li.id = id;
   li.appendChild(t);
 
-  addToLocalStorage(inputValue);
+  addToLocalStorage(id,inputValue);
 
   if (inputValue === "") {
     alert("Code: null");
@@ -75,10 +78,14 @@ function newElement() {
   span.appendChild(txt);
   li.appendChild(span);
 
+  //adding close button functionality
+  var div;
   for (i = 0; i<close.length; i++) {
     close[i].onclick = function(){
-      var div = this.parentElement;
+      div = this.parentElement;
+      id = this.dataset.id;
       div.style.display="none";
+      removeFromLocalStorage(id,div);
     }
   }
 
@@ -190,14 +197,26 @@ startPauseBtn.addEventListener("click", function(){
 });
 
 /*
-=================================================================================================================================================
-                                                            LOCAL STORAGE
-=================================================================================================================================================
+=========================================================================================================================================================================
+                                                                                 LOCAL STORAGE
+=========================================================================================================================================================================
 */ 
-function addToLocalStorage(value) {
-  let id = new Date().getTime().toString();
-  
+
+//adding to local storage
+function addToLocalStorage(id,value) {
+  // id = id.toString();
+  // console.log(id);
   localStorage.setItem(id, value);
 }
+
+//delete from local storage
+function removeFromLocalStorage(id,div,e){
+  div = div.innerHTML.toString();
+  let str = div.substring(0,div.indexOf("<"));
+  console.log(id);
+  //getting property name of value
+
+}
+
 
 
