@@ -84,7 +84,10 @@ function newElement() {
     close[i].onclick = function(){
       div = this.parentElement;
       id = this.parentElement.id;
-      div.style.display="none";
+      div.style.display = "none";
+      document.querySelector("ul").removeChild(div);
+      
+      //removing from local storage
       removeFromLocalStorage(id);
     }
   }
@@ -198,14 +201,12 @@ startPauseBtn.addEventListener("click", function(){
 
 /*
 =========================================================================================================================================================================
-                                                                                 LOCAL STORAGE
+                                                                             LOCAL STORAGE
 =========================================================================================================================================================================
 */ 
 
 //adding to local storage
 function addToLocalStorage(id,value) {
-  // id = id.toString();
-  // console.log(id);
   localStorage.setItem(id, value);
 }
 
@@ -214,6 +215,32 @@ function removeFromLocalStorage(id){
   localStorage.removeItem(id);
 }
 
+//setting items from local storage
+
+function setItems(){
+  let localStoragePropertyNames = Object.getOwnPropertyNames(localStorage);
+  console.log(localStoragePropertyNames);
+  if(localStorage.length > 0){
+    for (var i = 0; i<localStorage.length ; i++){
+      let propertyValue = localStorage.getItem(localStorage.key(i)); 
+      createItem(localStoragePropertyNames[i],propertyValue);
+    }
+  }
+}
+
+function createItem(id,value){
+  var li = document.createElement("li");
+  var inputValue = value;
+  var t = document.createTextNode(inputValue);
+  li.id = id;
+  li.appendChild(t);
+  document.querySelector("ul").appendChild(li);
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close-btn";
+  span.appendChild(txt);
+  li.appendChild(span);
+}
 
 
 
