@@ -6,8 +6,10 @@ var x = setInterval(function(){
   const date = new Date();
   let hour = date.getHours();
   let hours = hour>12 ? hour%12 : hour;
+  let hourss;
   let ampm = hour>=12 ? "pm" : "am";
   let minute = date.getMinutes();
+  let minutee;
   
   let datee = date.getDate();
   var month = date.getMonth();
@@ -57,6 +59,8 @@ function newElement() {
   var inputValue = document.getElementById("Input").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
+
+  addToLocalStorage(inputValue);
 
   if (inputValue === "") {
     alert("Code: null");
@@ -185,7 +189,15 @@ startPauseBtn.addEventListener("click", function(){
     }
 });
 
-//adding to local storage
-
+/*
+=================================================================================================================================================
+                                                            LOCAL STORAGE
+=================================================================================================================================================
+*/ 
+function addToLocalStorage(value) {
+  let id = new Date().getTime().toString();
+  
+  localStorage.setItem(id, value);
+}
 
 
