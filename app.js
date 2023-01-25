@@ -83,9 +83,9 @@ function newElement() {
   for (i = 0; i<close.length; i++) {
     close[i].onclick = function(){
       div = this.parentElement;
-      id = this.dataset.id;
+      id = this.parentElement.id;
       div.style.display="none";
-      removeFromLocalStorage(id,div);
+      removeFromLocalStorage(id);
     }
   }
 
@@ -210,13 +210,10 @@ function addToLocalStorage(id,value) {
 }
 
 //delete from local storage
-function removeFromLocalStorage(id,div,e){
-  div = div.innerHTML.toString();
-  let str = div.substring(0,div.indexOf("<"));
-  console.log(id);
-  //getting property name of value
-
+function removeFromLocalStorage(id){
+  localStorage.removeItem(id);
 }
+
 
 
 
